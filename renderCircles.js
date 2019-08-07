@@ -2,9 +2,13 @@
 function renderCircles(circles) {
     // HINT: You probably need to write a for loop!
     //       Or, if you're feeling fancy, use .map() 
+
+    for (let i = 0; i < circles.length; i++){
+        console.log(circles[i])
+    }
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(circles)}</code>
+            
         </div>
     `
 }
