@@ -19,7 +19,7 @@ function renderNametags(nametags) {
 			for (var i = 0; i < name.length; i++){
 			return `<div class="text-center mt-5">
 							<div class="nameTagTop">Hello, my name is:</div>
-							<div class="nameTagBottom">${nametags[i]}</div>
+							<div class="nameTagBottom">${name}</div>
 							</div>`
 						}
 		}
