@@ -16,12 +16,11 @@ function renderNametags(nametags) {
 		// `
 		
 		function createNameTag (name) {
-			for (var i = 0; i < name.length; i++){
 			return `<div class="text-center mt-5">
 							<div class="nameTagTop">Hello, my name is:</div>
-							<div class="nameTagBottom">${name}</div>
+							<div class="nameTagBottom">${name}</div>  
 							</div>`
-						}
+						 //You were using the wrong selector so it wasn't pulling the right data.
 		}
 		let newNameTag = nametags.map(createNameTag)
 
