@@ -1,20 +1,6 @@
 
 function renderNametags(nametags) {
-    // return `    original code to put names on a tag...
-    //     <div class="text-center mt-5">
-					
-		// 		<div style="
-		// 			color: white;
-		// 			background-color: blue;
-		// 			">Hello, my name is:</div>
-		// 			<div style="
-		// 			text-align: center">
-		// 			${nametags}
-		// 			</div>
-					
-    //     </div>
-		// `
-		
+    		
 		function createNameTag (name) {
 			return `<div class="text-center mt-5">
 							<div class="nameTagTop">Hello, my name is:</div>
