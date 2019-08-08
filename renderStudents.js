@@ -1,10 +1,21 @@
 
 function renderStudents(students) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(students)}</code>
-        </div>
-    `
+		
+	function attendance (student) {
+	return `
+    <div class="text-center mt-5">
+			<div class="containerStudents">
+				<h1>Roll Call!</h1>
+				<div class="studentList">
+					<div class="student">${student.name}</div>
+				</div>
+			</div>
+    </div>
+		`
+	}
+	let rollCall = students.map(attendance)
+
+	return rollCall
 }
 
 function students() {
