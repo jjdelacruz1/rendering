@@ -1,32 +1,30 @@
-function attendance (student) {
-	let isPresent = student.isPresent;
-	let string = "";
+function buildStudentHTML (student) {
+	let attendanceLabel = "";
 	let className = "";
 	
-	if (isPresent){
-		string = "Present";
+	if (student.isPresent){
+		attendanceLabel = "Present";
 		className = "student-green";
 	} else {
-		string = "Absent"
+		attendanceLabel = "Absent"
 		className = "student-red"
 	}
 
 	return `<div class="student ${className}">
 						<div class="name">${student.name}</div>
-						<div>${string}</div>
+						<div>${attendanceLabel}</div>
 					</div>`
 	
 }
 
-function renderStudents(students) {
-		let newStudentsArr = students.map(attendance);
-		let studentsString = newStudentsArr.join("");
+function buildStudentsHTML (students) {
+		let studentsHTMLArray = students.map(buildStudentHTML);
+		let studentsHTMLStr = studentsHTMLArray.join("");
 
-		let final = `<div class='parent'>
+		return `<div class='parent'>
 									<h1>Roll Call!</h1>
-									${studentsString}
-								</div>`;
-		return final;
+									${studentsHTMLStr}
+								</div>`
 }
 
 	
@@ -55,6 +53,5 @@ function students() {
             isPresent: false
         }
     ]
-		let studentsDivs = renderStudents(studentsAbstraction);
-    content.innerHTML = studentsDivs
+    content.innerHTML = buildStudentsHTML(studentsAbstraction)
 }

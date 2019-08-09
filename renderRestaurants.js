@@ -1,12 +1,17 @@
-
+function createRestaurant(name) {
+	return `<div class="restFormat">
+						<div>${name.name}</div>
+						<div>${name.type}</div>
+						<div>${name.priceRating}</div>
+					</div>
+            	`
+}
 function renderRestaurants(restaurants) {
-    // HINT: You can use <img /> tags that point to these playing card images: 
-    // https://commons.wikimedia.org/wiki/Category:SVG_playing_cards
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(restaurants)}</code>
-        </div>
-    `
+  let review = restaurants.map(createRestaurant)
+	console.log(review)
+	let allReview = review.join("")
+	let reviewWithWrapper = "<div class='restaurant'>" + allReview + "</div>"
+  return reviewWithWrapper
 }
 
 function restaurants() {
@@ -27,7 +32,7 @@ function restaurants() {
             name: "Iron Age",
             type: "Korean BBQ",
             priceRating: 4
-        },
+        }
     ];
 
     content.innerHTML = renderRestaurants(restaurantsAbstraction);
