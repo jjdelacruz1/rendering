@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 20px;
 }
 
 .nameTagTop {
@@ -27,4 +28,28 @@
 
 .containerStudents {
   border: 1px solid black;
+}
+
+.parent {
+  border: 1px solid black;
+  text-align: center;
+  width: 25vw;
+}
+
+.student {
+  border: 1px solid black;
+  margin: 16px;
+  background-color: greenyellow;
+}
+
+.student-green {
+  background-color: greenyellow;
+}
+
+.student-red {
+  background-color: red;
+}
+
+.name {
+  font-size: 26px;
 }
