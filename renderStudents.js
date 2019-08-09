@@ -1,13 +1,3 @@
-
-// function myMap(arr, fn) {
-// 	let acc = [];
-// 	for (let index = 0; index < arr.length; index++) {
-// 		const element = arr[index];
-// 		acc.push(fn(element));
-// 	}
-// 	return acc;
-// }
-
 function attendance (student) {
 	let isPresent = student.isPresent;
 	let string = "";

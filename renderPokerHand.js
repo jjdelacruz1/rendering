@@ -1,12 +1,19 @@
+function createCard(card) {
+	return `<img class="size" src="cards/${card.value}${card.suit}.png">`
+}
+
+
 
 function renderPokerHand(pokerHand) {
     // HINT: You can use <img /> tags that point to the card images in the /cards folder
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(pokerHand)}</code>
-        </div>
-    `
+	
+	let allCards = pokerHand.map(createCard)
+	console.log(allCards);
+	let allCardsString = allCards.join("")
+	let imgWithWrapper = "<div class='poker'>" + allCardsString + "</div>";
+	return imgWithWrapper;
 }
+
 
 function pokerHand() {
     var content = document.getElementById('content');
