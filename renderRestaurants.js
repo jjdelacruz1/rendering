@@ -1,14 +1,16 @@
+
 function createRestaurant(name) {
-	return `<div class="restFormat">
-						<div>${name.name}</div>
+    let rating = '$'.repeat(name.priceRating)
+    return `<div class="restFormat">
+						<div style="font-size: 36px;">${name.name}</div>
 						<div>${name.type}</div>
-						<div>${name.priceRating}</div>
+						<div class="dollar">${rating}</div>
 					</div>
-            	`
+                `
 }
 function renderRestaurants(restaurants) {
   let review = restaurants.map(createRestaurant)
-	console.log(review)
+    // console.log(review)
 	let allReview = review.join("")
 	let reviewWithWrapper = "<div class='restaurant'>" + allReview + "</div>"
   return reviewWithWrapper

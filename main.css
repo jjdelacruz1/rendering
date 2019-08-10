@@ -68,6 +68,11 @@
 
 .restFormat {
   margin: 5px;
-  padding
+  padding: 10px;
   background-color: lightcyan;
+}
+
+.dollar {
+  color: green;
+  font-size: 36px;
 }
