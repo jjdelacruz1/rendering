@@ -10,7 +10,7 @@ function renderPokerHand(pokerHand) {
 	let allCards = pokerHand.map(createCard)
 	console.log(allCards);
 	let allCardsString = allCards.join("")
-	let imgWithWrapper = "<div class='poker'>" + allCardsString + "</div>";
+	let imgWithWrapper = "<div>" + allCardsString + "</div>";
 	return imgWithWrapper;
 }
 
