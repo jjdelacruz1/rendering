@@ -10,14 +10,19 @@ function renderTweets(tweets) {
 
 function createTweet(tweet) {
     return `<div>
-              <div d-flex>
-              <img src='${tweet.user.profilePic}' style="width:75px">
-                <div> 
-                  <div>${tweet.user.username}</div>
-                  <div>${tweet.user.isVerified}</div>
-                  <div>${tweet.user.handle} </div>
+              <div class="top-section" d-flex>
+                <img src='${tweet.user.profilePic}' style="width:75px">
+                    <div flex-column>
+                    <div class="nameAndCheck"> 
+                        <div>${tweet.user.username}</div>
+                        <div>${tweet.user.isVerified}</div>
+                    </div>
+                    <div class="handle">
+                        <div>${tweet.user.handle} </div>
+                    </div>
                 </div>
               </div>
+
               <div>
                 <div>${tweet.text}</div>
                 <div class="footer">

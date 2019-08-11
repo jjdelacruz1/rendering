@@ -1,10 +1,22 @@
 
 function renderAlbums(albums) {
+    let final = albums.map(showArtist)
+    let finalAlbums = albums.map(showAlbum)
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(albums)}</code>
+            <div>${final}</div>
+            <div>${finalAlbums}</div>
         </div>
     `
+}
+
+function showArtist(name) {
+    return `<div> ${name.artist}</div>`
+}
+
+function showAlbum(record) {
+   
+    return `<div> ${record.albums[0].title}</div>`
 }
 
 function albums() {
