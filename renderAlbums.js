@@ -1,22 +1,31 @@
 
-function renderAlbums(albums) {
-    let final = albums.map(showArtist)
-    let finalAlbums = albums.map(showAlbum)
+function renderArtist(albums) {
+    let final = albums.map(buildArtist)
+    // let finalAlbums = albums.map(showAlbum)
     return `
         <div class="text-center mt-5">
             <div>${final}</div>
-            <div>${finalAlbums}</div>
         </div>
     `
 }
 
-function showArtist(name) {
-    return `<div> ${name.artist}</div>`
+function buildAlbums(albums) {
+    return `<li>do js magic here</li>`;
 }
 
-function showAlbum(record) {
-   
-    return `<div> ${record.albums[0].title}</div>`
+function buildArtist(obj) {
+    const artistName = obj.artist;
+    const albumsHTML = buildAlbums(obj.albums);
+    return `<div> 
+        <h4>${artistName}</h4>
+        <ul>
+            ${albumsHTML}
+        </ul>
+    </div>`
+}
+
+function showAlbum(albums) {
+    return `<div> ${album.title}</div>`
 }
 
 function albums() {
@@ -91,6 +100,6 @@ function albums() {
         }
     ]
 
-    content.innerHTML = renderAlbums(albumsAbstraction);
+    content.innerHTML = renderArtist(albumsAbstraction);
 
 }

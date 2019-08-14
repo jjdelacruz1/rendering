@@ -16,7 +16,7 @@ function createMovie(name) {
                         <div class="card">
                             <div class="card-horizontal d-flex">
                                 <div class="img-square-wrapper" style="padding: 10px;">
-                                    <img class="" src = "${name.poster}">
+                                    <img src = "${name.poster}">
                                 </div>
                                 <div class="card-body style="text-align: left">
                                     <h4 class="card-title" style="font-size: 26px;">${name.title}</h4>
