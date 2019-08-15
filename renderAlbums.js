@@ -1,6 +1,6 @@
 
-function renderArtist(albums) {
-    let final = albums.map(buildArtist)
+function renderArtist(artistData) {
+    let final = artistData.map(buildArtist)
     // let finalAlbums = albums.map(showAlbum)
     return `
         <div class="text-center mt-5">
@@ -9,28 +9,44 @@ function renderArtist(albums) {
     `
 }
 
-function buildAlbums(data) {
-      const albumTitle = data.albums
-      for(var i = 0; i < albumTitle.length; i++){
-            var albumTitleNew = albumTitle[i].title
-            console.log(albumTitleNew) 
-      }
-      const albumCover = data.albums[0].albumCover
-      const songTitle = data.albums[0].songs[0].title
-      const songLength = data.albums[0].songs[0].length
-      return `<li style="list-style: none"><img src="${albumCover}" style="width: 200px">${albumTitleNew}</li><hr>
-             <li style="list-style: none">${songTitle} ${songLength}</li><hr>
-      `
+function buildSongs(songs) {
+    console.log(songs)
+}
+function buildAllSongs(songs) {
+    let songsString = "";
+    for(var i = 0; i < songs.length; i++){
+        songsString = songsString + buildSongs(songs[i]);
+    }
+    return songsString
+}
+function buildSigleAlbum(album) {
+    // console.log(album);
+    return `<li style="list-style: none"><img src="${album.albumCover}" style="width: 100px">${album.title}</li>`
 }
 
-function buildArtist (obj) {
-    const artistName = obj.artist
-    const albumsHTML = buildAlbums(obj)
+function buildAllAlbums(albums) {
+    
+    let albumsString = "";
+    for(var i = 0; i < albums.length; i++){
+        albumsString = albumsString + buildSigleAlbum(albums[i]);
+    }
+    return albumsString;
+}
+
+
+function buildArtist (artistData) {
+    const artistName = artistData.artist;
+    const albums = artistData.albums;
+    const albumsHTML = buildAllAlbums(albums);
+    const songs = artistData.albums.songs.title;
+    console.log(a)
+
     return `<div>
               <h4>${artistName}</h4>
               <hr>
               <ul>
                 ${albumsHTML}
+                
               </ul>
             </div>
               `
