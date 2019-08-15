@@ -9,23 +9,31 @@ function renderArtist(albums) {
     `
 }
 
-function buildAlbums(albums) {
-    return `<li>do js magic here</li>`;
+function buildAlbums(data) {
+      const albumTitle = data.albums
+      for(var i = 0; i < albumTitle.length; i++){
+            var albumTitleNew = albumTitle[i].title
+            console.log(albumTitleNew) 
+      }
+      const albumCover = data.albums[0].albumCover
+      const songTitle = data.albums[0].songs[0].title
+      const songLength = data.albums[0].songs[0].length
+      return `<li style="list-style: none"><img src="${albumCover}" style="width: 200px">${albumTitleNew}</li><hr>
+             <li style="list-style: none">${songTitle} ${songLength}</li><hr>
+      `
 }
 
-function buildArtist(obj) {
-    const artistName = obj.artist;
-    const albumsHTML = buildAlbums(obj.albums);
-    return `<div> 
-        <h4>${artistName}</h4>
-        <ul>
-            ${albumsHTML}
-        </ul>
-    </div>`
-}
-
-function showAlbum(albums) {
-    return `<div> ${album.title}</div>`
+function buildArtist (obj) {
+    const artistName = obj.artist
+    const albumsHTML = buildAlbums(obj)
+    return `<div>
+              <h4>${artistName}</h4>
+              <hr>
+              <ul>
+                ${albumsHTML}
+              </ul>
+            </div>
+              `
 }
 
 function albums() {
